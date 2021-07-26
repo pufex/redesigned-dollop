@@ -1,21 +1,36 @@
 'use strict'
 
-alert("Program służy do liczenia silni metodą iteracji. ");
+alert("Program służy do wypełnienia listy gości.");
 
-function factorial(a){
-    a = Math.floor(Math.abs(Number(a)));
-    
-    if(a){} else return 1;
+function bookGuests(){
+    var guests = [];
+    var guestNumber = 0;
+    while(confirm("Czy chcesz kontynuować?")){
+        var firstName = prompt("Wprowadź imię gościa: ");
+        var surname = prompt("Wprowadź nazwisko gościa: ");
+        var age = prompt("Wprowadź wiek gościa: ");
 
-    var n = 1;
-    for(var i = 1; i <= a; i++){
-        n = n*i;
+        guests[guestNumber] = {
+            firstName = firstName, 
+            surname = surname,
+            age = age,
+        };
+
+        if(age >= 18){
+            guests[guestNumber].majority = true;
+        }
+        else{
+            guests[guestNumber].majority = false;
+        }
+
+        alert(`Wprowadzono nowego gościa. Imię: ${guests[guestNumber].firstName}; Nazwisko: ${guests[guestNumber].surname}; Wiek: ${guests[guestNumber].age}.`);
+        guestNumber++;
     }
-    return n;
+    return guests;
 }
 
-var number = Number(prompt("Wprowadź liczbę: "));
-if(number){}
-else number = 0;
+var guests = bookGuests();
 
-alert(`Silnia liczby ${number} wynosi: ${factorial(number)}.`);
+document.write(guests);
+alert("Klasa przechowująca listę gości została pokazana w konsoli (Ctrl + Shift + J).");
+
