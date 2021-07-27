@@ -31,6 +31,5 @@ function bookGuests(){
 
 var guests = bookGuests();
 
-document.write(guests);
+console.log(guests);
 alert("Klasa przechowująca listę gości została pokazana w konsoli (Ctrl + Shift + J).");
-
