@@ -10,11 +10,11 @@ function bookGuests(){
         var surname = prompt("Wprowadź nazwisko gościa: ");
         var age = prompt("Wprowadź wiek gościa: ");
 
-        guests[guestNumber] = {
-            firstName = firstName, 
-            surname = surname,
-            age = age,
-        };
+        guests[guestNumber] = {};
+        guests[guestNumber].firstName = firstName; 
+        guests[guestNumber].surname = surname;
+        guests[guestNumber].age = age;
+        
 
         if(age >= 18){
             guests[guestNumber].majority = true;
